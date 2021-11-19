@@ -51,7 +51,7 @@ Distributed under the MIT License. See [LICENSE](https://github.com/thaag7734/Py
 
 ## Authors
 
-* **Tyler Haag** - ** - [Tyler Haag](https://github.com/thaag7734/) - *Creator*
+* **Tyler Haag** - [Tyler Haag](https://github.com/thaag7734/) - *Creator*
 
 ## Acknowledgements
 
