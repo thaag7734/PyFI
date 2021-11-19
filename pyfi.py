@@ -82,7 +82,7 @@ ftg.add_argument(
 ftg.add_argument(
     "-m", "--monospace",
     help = "Takes a .ttf file and renames it to"
-           + " mo.ttf in the output dir"
+           + " mo.ttf (ms.ttf for variable fonts) in the output dir"
 )
 
 if len(sys.argv) == 1:
@@ -92,6 +92,8 @@ if len(sys.argv) == 1:
 args = ap.parse_args()
 
 name_conversions = {
+    "Italic[wdth,wght]": "ssi",
+    "[wdth,wght]": "ss",
     "BlackItalic": "bli",
     "Black": "bl",
     "ExtraBoldItalic": "ebi",
@@ -157,7 +159,10 @@ def rename_file(name_from, name_to=""):
 if args.emoji is not None:
     rename_file(args.emoji, "e.ttf")
 if args.monospace is not None:
-    rename_file(args.monospace, "mo.ttf")
+    out_name = "mo.ttf"
+    if "[wdth,wght]" in args.monospace:
+        out_name = "ms.ttf"
+    rename_file(args.monospace, out_name)
 if args.dir:
     for f in os.listdir():
         if f[-4:] == ".ttf":
