@@ -3,13 +3,13 @@
   <h3 align="center">PyFontInstaller</h3>
 
   <p align="center">
-    <a href="https://github.com/thaag7734/PyPI/issues">Report Bug</a>
+    <a href="https://github.com/thaag7734/PyFI/issues">Report Bug</a>
     .
-    <a href="https://github.com/thaag7734/PyPI/issues">Request Feature</a>
+    <a href="https://github.com/thaag7734/PyFI/issues">Request Feature</a>
   </p>
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/thaag7734/PyPI/total) ![Contributors](https://img.shields.io/github/contributors/thaag7734/PyPI?color=dark-green) ![Issues](https://img.shields.io/github/issues/thaag7734/PyPI) ![License](https://img.shields.io/github/license/thaag7734/PyPI)
+![Downloads](https://img.shields.io/github/downloads/thaag7734/PyFI/total) ![Contributors](https://img.shields.io/github/contributors/thaag7734/PyFI?color=dark-green) ![Issues](https://img.shields.io/github/issues/thaag7734/PyFI) ![License](https://img.shields.io/github/license/thaag7734/PyFI)
 
 ## Table Of Contents
 
@@ -47,7 +47,7 @@ Any contributions are welcome! If you have an idea for something this script cou
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/thaag7734/PyPI/blob/master/LICENSE.md) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/thaag7734/PyFI/blob/master/LICENSE) for more information.
 
 ## Authors
 
