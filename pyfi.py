@@ -177,7 +177,6 @@ if args.dir:
 if args.push:
     push_files("/sdcard/Fonts/")
     print("Done! Files pushed to /sdcard/Fonts/" + get_font_name() + "/")
-
 if args.install:
     os.system("adb shell rm -rf /sdcard/OhMyFont/CFI/")
     push_files("/sdcard/OhMyFont/CFI/")
