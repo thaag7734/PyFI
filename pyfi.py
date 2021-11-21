@@ -13,7 +13,6 @@ PyFI: https://github.com/thaag7734/pyfi
 import os
 import shutil
 import argparse
-import textwrap
 import sys
 
 DESC_TEXT = """
@@ -44,45 +43,45 @@ OUT_DIR = "PyFI_OUT"
 ap = argparse.ArgumentParser(
     prog="PyFontConverter",
     formatter_class=argparse.RawDescriptionHelpFormatter,
-    description=textwrap.dedent(DESC_TEXT),
+    description=DESC_TEXT,
     epilog=USAGE_EX
 )
 
 ap.add_argument(
     "-p", "--push",
-    help = "Pushes created font files to /sdcard/Fonts/[font name],"
-           + " creating it if it doesn't exist",
+    help="Pushes created font files to /sdcard/Fonts/[font name]," +
+    " creating it if it doesn't exist",
     action="store_true"
 )
 ap.add_argument(
     "-i", "--install",
-    help = "Clears /sdcard/OhMyFont/CFI"
-           + " and pushes created font files there",
+    help="Clears /sdcard/OhMyFont/CFI" +
+    " and pushes created font files there",
     action="store_true"
 )
 ap.add_argument(
     "-n", "--name",
-    help = "Manually set the name of the font"
-           + " (normally defaults to the folder name)"
+    help="Manually set the name of the font" +
+    " (normally defaults to the folder name)"
 )
 
 ftg = ap.add_mutually_exclusive_group()
 ftg.add_argument(
     "-d", "--dir",
-    help = "Renames all .ttf files in the current dir"
-           + " and moves them to ./"
-           + OUT_DIR,
-    action = "store_true"
+    help="Renames all .ttf files in the current dir" +
+           " and moves them to ./" +
+           OUT_DIR,
+    action="store_true"
 )
 ftg.add_argument(
     "-e", "--emoji",
-    help = "Takes a .ttf file and renames it to"
-           + " e.ttf in the output dir"
+    help="Takes a .ttf file and renames it to" +
+    " e.ttf in the output dir"
 )
 ftg.add_argument(
     "-m", "--monospace",
-    help = "Takes a .ttf file and renames it to"
-           + " mo.ttf (ms.ttf for variable fonts) in the output dir"
+    help="Takes a .ttf file and renames it to" +
+    " mo.ttf (ms.ttf for variable fonts) in the output dir"
 )
 
 if len(sys.argv) == 1:
@@ -133,13 +132,13 @@ def push_files(to_path):
     os.system("adb shell mkdir -p " + to_path)
     for f in os.listdir(OUT_DIR):
         os.system(
-            "adb push "
-            + os.path.join(OUT_DIR, f)
-            + " "
-            + to_path
-            + font_name
-            + "/"
-            + f
+            "adb push " +
+            os.path.join(OUT_DIR, f) +
+            " " +
+            to_path +
+            font_name +
+            "/" +
+            f
         )
     return font_name
 
@@ -180,5 +179,5 @@ if args.push:
 if args.install:
     os.system("adb shell rm -rf /sdcard/OhMyFont/CFI/")
     push_files("/sdcard/OhMyFont/CFI/")
-    print("Done! Please note that you have to reinstall the Magisk module\n"
-          + "manually and reboot, as installation cannot be done over ADB.")
+    print("Done! Please note that you have to reinstall the Magisk module\n" +
+          "manually and reboot, as installation cannot be done over ADB.")
