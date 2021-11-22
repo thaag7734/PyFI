@@ -177,7 +177,8 @@ if args.push:
     push_files("/sdcard/Fonts/")
     print("Done! Files pushed to /sdcard/Fonts/" + get_font_name() + "/")
 if args.install:
-    os.system("adb shell rm -rf /sdcard/OhMyFont/CFI/")
+    if not (args.emoji or args.monospace):  # Emoji/monospace only ever update, maybe change this eventually
+        os.system("adb shell rm -rf /sdcard/OhMyFont/CFI/")
     push_files("/sdcard/OhMyFont/CFI/")
     print("Done! Please note that you have to reinstall the Magisk module\n"
           + "manually and reboot, as installation cannot be done over ADB.")
